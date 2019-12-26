@@ -1,0 +1,57 @@
+{
+  "name": "ts-wc-starter",
+  "version": "0.0.1",
+  "description": "TypeScript web component starter template",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/visual --timeout=10000",
+    "test:regen": "npm run build && node test/visual/regen.js",
+    "build": "lerna run build",
+    "build:watch": "tsc -w",
+    "lint:eslint": "eslint 'src/**/*.ts'",
+    "lint:prettier": "prettier 'src/**/*.ts' --list-different || ( echo '↑↑↑  these files are not well formatted  ↑↑↑' && exit 1 )",
+    "format:eslint": "eslint 'src/**/*.ts' --fix",
+    "format:prettier": "prettier 'src/**/*.ts' --write",
+    "generate:component": "hygen component create",
+    "new-version": "lerna version --conventional-commits --yes"
+  },
+  "author": "Dzintars Klavins <dzintars.dev@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
+    "@types/puppeteer": "^1.19.1",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "browser-sync": "^2.26.7",
+    "chai": "^4.2.0",
+    "compression": "^1.7.4",
+    "eslint": "^6.3.0",
+    "express": "^4.17.1",
+    "express-cache-headers": "^0.1.4",
+    "express-transform-bare-module-specifiers": "^1.0.2",
+    "husky": "^3.0.5",
+    "hygen": "^5.0.1",
+    "jsonlint": "^1.6.3",
+    "lerna": "^3.19.0",
+    "lint-staged": "^9.2.5",
+    "mocha": "^6.2.0",
+    "pixelmatch": "^5.0.2",
+    "pngjs": "^3.4.0",
+    "prettier": "^1.18.2",
+    "puppeteer": "^1.19.0",
+    "serve-static": "^1.14.1",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "lit-element": "^2.2.1",
+    "lit-html": "^1.1.2",
+    "tslib": "^1.10.0"
+  }
+}
